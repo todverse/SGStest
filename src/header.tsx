@@ -19,7 +19,13 @@ class Header extends React.Component<S> {
         }
     }
     public p = () => {
-        document.getElementById('p')?.click();
+        let inter: NodeJS.Timer;
+        inter = setInterval(() => {
+            window.scrollBy(0, 80);
+            if(document.body.clientHeight+document.body.getBoundingClientRect().top === window.innerHeight) {
+                clearInterval(inter)
+            }
+        }, 10)
     }
     public render() {
         return(
