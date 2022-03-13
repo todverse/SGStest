@@ -1,0 +1,93 @@
+.aboutus {
+    height: 645px;
+    text-align: center;
+    color: white;
+    background-color: #16a086;
+    padding-top: 50px;
+}
+.aboutus_text {
+    padding-bottom: 40px;
+}
+.ab_flex {
+    width: 70%;
+    margin: auto;
+    display: flex;
+}
+.ab_flex_elem {
+    max-width: 220px;
+    min-width: 220px;
+    height: 456px;
+    margin: auto;
+    background-color: white;
+}
+.ab_flex_elem_img {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    width: 100%;
+}
+.ab_flex_elem_text {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+.title {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.prof {
+    padding-top: 0px;
+    margin-top: 0px;
+    font-family: cursive;
+    font-size: 0.8em;
+}
+.other {
+    padding: 10px;
+    text-align: start;
+}
+.hideElem {
+    display: flex;
+    position: absolute;
+    z-index: 9999;
+    margin-top: -140px;
+    margin-left: 20px;
+    width: 180px;
+    height: 70px;
+    background-color: #16a08699;
+}
+.hide {
+    display: none;
+}
+.social {
+    width: 25%;
+    margin-top: 18px;
+    color: white;
+}
+@import 'index';
+@media screen and (max-width: $medium + 265px) {
+    .ab_flex {
+        width: 90%;
+    }
+}
+@media screen and (max-width: $medium + 63px) {
+    .ab_flex {
+        width: 100%;
+    }
+}
+@media screen and (max-width: $medium - 96px) {
+    .ab_flex {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .aboutus {
+        height: 1100px;
+    }
+}
+@media screen and (max-width: $small + 54px) {
+    .aboutus {
+        height: 1700px;
+    }
+}

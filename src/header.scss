@@ -1,0 +1,203 @@
+@mixin navigation() {
+    list-style-type: none;
+    display: inline-flex;
+    font-size: 1.4em;
+    height: 90px;
+    margin: 0;
+}
+@mixin navigation-elem() {
+    margin-left: 15px;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+.header {
+    height: 550px;
+}
+.navPan {
+    height: 95px;
+    background-color: white;
+}
+.mainHead {
+    height: 455px;
+    text-align: center;
+    background-image: url('./header_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.mainHead_text {
+    font-weight: 100;
+    padding-top: 50px;
+    margin: 0;
+}
+.mainHead_t {
+    width: 50%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.header_btn {
+    margin-bottom: 30px;
+    background-color: #1bbc9b;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    width: 130px;
+    height: 40px;
+}
+.header_btn:hover {
+    width: 130px+10px;
+    height: 40px+5px;
+    font-size: 1.3em;
+    margin-bottom: 30px-5px;
+}
+.bold {
+    font-weight: 900;
+}
+.nav {
+    @include navigation();
+    float: right;
+    margin-right: 30px;
+    font-weight: 100;
+}
+.nav_elem {
+    @include navigation-elem();
+}
+.nav_elem_link {
+    padding: 5px;
+}
+.nav_elem_link:hover {
+    background-color: #1bbc9b;
+    color: white;
+}
+.nav_elem:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.header_logo {
+    display: inline;
+}
+.mainHead-icon:hover {
+    color: black;
+}
+.logo_textbox {
+    display: inline-block;
+    width: 100px;
+    height: 95px;
+    vertical-align: top;
+    h1 {
+        font-size: 1.2em;
+        margin: 0;
+        margin-top: 30px;
+        padding: 0;
+    }
+    p {
+        font-size: 0.6em;
+        padding: 0;
+        margin: 0;
+    }
+}
+.hideNav {
+    display: none;
+}
+.anim {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+    background-color: #b0e7f8;
+    animation-name: slowUp;
+    animation-duration: 0.7s;
+    .nav-h {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+        .nav_elem {
+            padding-left: 0;
+            margin-left: 0;
+        } 
+    }
+}
+.showNav {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+    background-color: #b0e7f8;
+    animation-name: slowDown;
+    animation-duration: 0.7s;
+}
+@keyframes slowDown {
+    from {
+        opacity: 50%;
+        top: -100px;
+    }
+    to {
+        opacity: 100%;
+        top: 0px;
+    }
+}
+@keyframes slowUp {
+    from {
+        opacity: 100%;
+        top: 0px;
+    }
+    to {
+        opacity: 0%;
+        top: -100px;
+    }
+}
+.nav-h {
+    @include navigation();
+    font-size: 1.2em;
+    padding: 0;
+}
+.closeHideNav {
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+#btn_open {
+    display: none;
+    float: right;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+#btn_open:hover {
+    color: #1bbc9b;
+}
+.closeHideNav:hover {
+    color: #1bbc9b;
+}
+@import 'index';
+@media screen and (max-width: $medium) {
+    .nav {
+        display: none;
+    }
+    #btn_open {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: $small) {
+    .showNav {
+        .nav-h {
+            font-size: 0.9em;
+            width: 80%;
+            .nav_elem {
+                margin-left: 0;
+            }
+        }
+    }
+    .mainHead_t {
+        width: 98%;
+    }
+}
